@@ -73,10 +73,8 @@ export OLD_PATH=$PATH
 PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 export PATH
 # Settings for virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/.virtualenvs
 export PATH="/usr/local/mysql/bin:$PATH"
-eval "$(rbenv init -)"
 # Settings for irssi notifications
 irssi_notifier() {
     ssh lisa@us.holligan.net 'echo -n "" > ~/.irssi/fnotify; tail -f ~/.irssi/fnotify' | \
@@ -97,8 +95,16 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-eval "$(plenv init -)"
+
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
+
+# Setting PATH for Python 3.4
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
+export PATH
