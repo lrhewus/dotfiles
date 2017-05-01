@@ -15,6 +15,7 @@ nmap <Leader>o :set paste!<CR>
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 set shiftwidth=4 tabstop=4 softtabstop=4 expandtab shiftround
+set mouse=a
 set autoindent " always set autoindenting on
 set wildchar=<Tab>
 set matchpairs+=<:> "Allow % to bounce between angles too
