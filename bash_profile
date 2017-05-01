@@ -54,7 +54,7 @@ function prompt
     if [ "$VIRTUAL_ENV" ]; then
         VENV="($(basename $VIRTUAL_ENV)) "
     fi
-    export PS1="${GREEN}\u${CYAN} $(_git_prompt)${CYAN}\w${GRAY}${VENV}$ "
+    export PS1="[\h] ${GREEN}\u${CYAN} $(_git_prompt)${CYAN}\w${GRAY}${VENV}$ "
 }
 PROMPT_COMMAND=prompt
 ##
